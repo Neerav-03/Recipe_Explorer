@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recipe Finder</title>
+  <style>
+    /* CSS styling for the search form */
+    #search-form {
+      margin-bottom: 20px;
+    }
+  
+    /* CSS styling for the filters */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .filter-group {
+      flex: 1;
+      margin-bottom: 10px;
+    }
+    
+    /* CSS styling for the input box */
+    .input-group input {
+      width: 100%;
+      max-width: 250px;
+    }
+    
+    .Favourites {
+      color: crimson;
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+
+  </style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<body>
+
+  <div class="container">
+    <div class="d-flex justify-content-end">
+      <a href="favourites.html" class="btn btn-primary btn-sm Favourites">
+          <i class="fa-solid fa-home" style="margin-right: 5px;"></i> Favourites
+      </a>
+    </div>
+
+    <div class="col-lg-6 mx-auto px-4 py-2 text-center">
+      <h1 class="display-5 fw-bold text-body-emphasis">Recipe Finder</h1>
+      <p class="lead mb-4">Discover delicious recipes tailored to your preferences with our interactive web app. Simply enter your search criteria and browse through a curated selection of recipes that match your needs.</p>
+      <form id="search-form" class="d-flex flex-wrap justify-content-center" role="search">
+        <div class="text-center">
+          <div class="input-group mb-3">
+            <input type="text" id="search-input" placeholder="Enter dish to browse" class="form-control me-2" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+          </div>
+        </div>
+        
+        
+        <div class="filters">
+          <div class="filter-group">
+            <label for="cuisine">Cuisine:</label>
+            <select class="form-select" id="cuisine">
+              <option value="">Any</option>
+              <option value="italian">Italian</option>
+              <option value="mexican">Mexican</option>
+              <option value="indian">Indian</option>
+              <!-- Add more cuisine options as needed -->
+            </select>
+          </div>
+        
+          <div class="filter-group">
+            <label for="diet">Diet:</label>
+            <select class="form-select" id="diet">
+              <option value="">Any</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="vegan">Vegan</option>
+              <option value="gluten-free">Gluten-free</option>
+              <!-- Add more diet options as needed -->
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label for="type">Type:</label>
+            <select class="form-select" id="typeof">
+              <option value="">Any</option>
+              <option value="main course">Main Course</option>
+              <option value="side dish">Side Dish</option>
+              <option value="dessert">Dessert</option>
+              <option value="appetizer">Appetizer</option>
+              <option value="breakfast">Breakfast</option>
+              <option value="soup">Soup</option>
+              <option value="beverage">Beverage</option>
+              <option value="snack">Snack</option>
+              <!-- Add more cuisine options as needed -->
+            </select>
+          </div>
+          <!-- Add more filter options and form controls as needed -->
+        </div>
+        
+      </form>
+      
+    </div>
+  </div>
+
+  <div id="recipe-results"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

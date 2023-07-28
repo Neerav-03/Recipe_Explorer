@@ -1,0 +1,21 @@
+import requests
+
+def find_sid(roll_number):
+    url = f"https://examination.iitbhu.ac.in/grade_sheet/index.php?sname={roll_number}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        # Extract the sid value from the response URL
+        sid_index = response.url.find("sid=")
+        if sid_index != -1:
+            sid = response.url[sid_index+4:]
+            return sid
+        else:
+            print("SID not found.")
+    else:
+        print("Error retrieving the page.")
+
+# Usage example
+roll_number = "21085054"
+sid = find_sid(roll_number)
+if sid:
+    print(f"The SID for roll number {roll_number} is {sid}.")
